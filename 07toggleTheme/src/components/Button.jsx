@@ -5,7 +5,7 @@ import { useState } from "react";
 const Button = (e) => {
   const [darkModeStatus, setDarkModeStatus] = useState(false);
   const toggleDarkMode = (e) => {
-    darkModeStatus ? setDarkModeStatus(false) : setDarkModeStatus(true);
+    setDarkModeStatus(e.target.checked);
   };
 
   useEffect(() => {
