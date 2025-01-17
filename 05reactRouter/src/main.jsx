@@ -9,11 +9,14 @@ import {
   RouterProvider,
   createBrowserRouter,
 } from "react-router-dom";
-import Home from "./components/Home.jsx";
-import About from "./components/About.jsx";
-import Contact from "./components/Contact.jsx";
-import Github, { GithubInfoLoader } from "./components/Github.jsx";
-import User from "./components/User.jsx";
+import {
+  Home,
+  About,
+  Contact,
+  Github,
+  GithubInfoLoader,
+  User,
+} from "./components/index.js";
 
 const router = createBrowserRouter([
   {
