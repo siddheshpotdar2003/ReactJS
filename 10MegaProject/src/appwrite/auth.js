@@ -49,9 +49,9 @@ export class AuthService {
     }
   }
 
-  async getUser(userId) {
+  async getUser() {
     try {
-      return await this.account.getSession(current);
+      return await this.account.get();
     } catch (error) {
       throw error;
     }

@@ -1,15 +1,40 @@
-// import config from "./config/config.js";
-import { useEffect } from "react";
-import authService from "./appwrite/auth";
-function App() {
-  // console.log(config.appWriteURL);
-  // console.log("hello react!");
+import { useEffect, useState } from "react";
+import authService from "./appwrite/auth.js";
+import { useDispatch } from "react-redux";
+import { login, logout } from "./features/authSlice.js";
+import { Header, Footer } from "./components/index.js";
 
-  return (
-    <>
-      <h1>Blog App with Appwrite</h1>
-    </>
-  );
+function App() {
+  const [loading, setLoading] = useState(true);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    authService
+      .getUser()
+      .then((user) => {
+        if (user) {
+          dispatch(login(user));
+        } else {
+          dispatch(logout());
+        }
+      })
+      .catch((error) => console.log(error))
+      .finally(() => setLoading(false));
+  }, []);
+
+  return !loading ? (
+    <div>
+      <div>
+        <Header />
+        <main>
+          {/* TODO: <Outlet /> */}
+          TODO
+        </main>
+        <Footer />
+      </div>
+    </div>
+  ) : null;
 }
 
 export default App;
