@@ -2,7 +2,7 @@ import config from "../config/config.js";
 import { Client, Databases, ID, Query, Storage } from "appwrite";
 
 export class Service {
-  client = new Client();
+  client;
   databases;
   storage;
 
@@ -10,7 +10,7 @@ export class Service {
     this.client = new Client()
       .setEndpoint(config.appWriteURL)
       .setProject(config.appWriteProjectId);
-    this.databases = new Databases(client);
+    this.databases = new Databases(this.client);
     this.storage = new Storage();
   }
 

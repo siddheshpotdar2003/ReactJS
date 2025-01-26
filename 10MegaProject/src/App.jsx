@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import authService from "./appwrite/auth.js";
 import { useDispatch } from "react-redux";
 import { login, logout } from "./features/authSlice.js";
-import { Header, Footer } from "./components/index.js";
+import { Header, Footer, RTE } from "./components/index.js";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -29,7 +29,7 @@ function App() {
         <Header />
         <main>
           {/* TODO: <Outlet /> */}
-          TODO
+          {/* <RTE /> */}
         </main>
         <Footer />
       </div>

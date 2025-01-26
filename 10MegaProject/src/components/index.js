@@ -7,6 +7,7 @@ import Login from "./Login.jsx";
 import Signup from "./Signup.jsx";
 import PostCard from "./PostCard.jsx";
 import Protected from "./AuthLayout.jsx";
+import RTE from "./RTE.jsx";
 
 export {
   Header,
@@ -18,4 +19,5 @@ export {
   Signup,
   PostCard,
   Protected,
+  RTE,
 };
