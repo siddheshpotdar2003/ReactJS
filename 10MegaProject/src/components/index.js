@@ -8,6 +8,7 @@ import Signup from "./Signup.jsx";
 import PostCard from "./PostCard.jsx";
 import Protected from "./AuthLayout.jsx";
 import RTE from "./RTE.jsx";
+import PostForm from "./postForm/postForm.jsx";
 
 export {
   Header,
@@ -20,4 +21,5 @@ export {
   PostCard,
   Protected,
   RTE,
+  PostForm,
 };
