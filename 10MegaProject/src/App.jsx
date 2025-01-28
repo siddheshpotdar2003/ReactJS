@@ -3,6 +3,7 @@ import authService from "./appwrite/auth.js";
 import { useDispatch } from "react-redux";
 import { login, logout } from "./features/authSlice.js";
 import { Header, Footer, RTE } from "./components/index.js";
+import { Outlet } from "react-router-dom";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -24,15 +25,14 @@ function App() {
   }, []);
 
   return !loading ? (
-    <div>
-      <div>
-        <Header />
-        <main>
-          {/* TODO: <Outlet /> */}
-          {/* <RTE /> */}
-        </main>
-        <Footer />
-      </div>
+    <div className="min-h-screen w-full flex flex-col">
+      <Header />
+      <main className="flex-1">
+        {/* TODO: <Outlet /> */}
+        {/* <RTE /> */}
+        <Outlet />
+      </main>
+      <Footer />
     </div>
   ) : null;
 }

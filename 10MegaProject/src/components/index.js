@@ -9,6 +9,9 @@ import PostCard from "./PostCard.jsx";
 import Protected from "./AuthLayout.jsx";
 import RTE from "./RTE.jsx";
 import PostForm from "./postForm/postForm.jsx";
+import Input from "./Input.jsx";
+import Button from "./Button.jsx";
+import Select from "./Select.jsx";
 
 export {
   Header,
@@ -22,4 +25,7 @@ export {
   Protected,
   RTE,
   PostForm,
+  Input,
+  Button,
+  Select,
 };
