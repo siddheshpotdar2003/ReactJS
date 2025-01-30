@@ -6,7 +6,7 @@ import { LogoutBtn } from "../components";
 
 const Header = () => {
   const navigate = useNavigate();
-  const authStatus = useSelector((state) => state.isAuthenticated);
+  const authStatus = useSelector((state) => state.auth.isAuthenticated);
 
   const navItems = [
     { name: "Home", url: "/", active: true },

@@ -11,6 +11,8 @@ const RTE = ({ name, label, control, defaultValue = "" }) => {
         control={control}
         render={({ field: { onChange } }) => (
           <Editor
+            // apiKey={import.meta.env.TINY_API_KEY}
+            apiKey="2p4lstlcjrqbxf150ff4dsgndi923092k1jqbnwr74t18kjz"
             initialValue={defaultValue}
             init={{
               initialValue: defaultValue,

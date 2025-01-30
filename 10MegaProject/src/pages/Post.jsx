@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useParams, useNavigate } from "react-router-dom";
 import appwriteService from "../appwrite/config.js";
+import { Container } from "../components";
+import parse from "html-react-parser";
 
 const Post = () => {
   const [post, setPost] = useState(null);
@@ -13,6 +15,7 @@ const Post = () => {
   const isAuthor = post && userData ? post.userId === userData.$id : false;
 
   useEffect(() => {
+    console.log(`Slug: ${slug}`);
     if (slug) {
       appwriteService.getPost(slug).then((post) => {
         if (post) setPost(post);

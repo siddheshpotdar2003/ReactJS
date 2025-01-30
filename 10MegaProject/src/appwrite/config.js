@@ -11,18 +11,18 @@ export class Service {
       .setEndpoint(config.appWriteURL)
       .setProject(config.appWriteProjectId);
     this.databases = new Databases(this.client);
-    this.storage = new Storage();
+    this.storage = new Storage(this.client);
   }
 
-  async createPost({ title, article, featuredImage, status, userId }) {
+  async createPost({ title, content, featuredImage, status, userId }) {
     try {
-      return await databases.createDocument(
+      return await this.databases.createDocument(
         config.appWriteDatabaseId,
         config.appWriteCollectionId,
         ID.unique(),
         {
           title,
-          article,
+          content,
           featuredImage,
           status,
           userId,
@@ -91,7 +91,7 @@ export class Service {
 
   async uploadFile(file) {
     try {
-      return await storage.createFile(
+      return await this.storage.createFile(
         config.appWriteBucketId,
         ID.unique(),
         file

@@ -8,18 +8,22 @@ import { Logo, Input, Button } from "../components";
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
   const [error, setError] = useState(null);
 
   const login = async (data) => {
     try {
+      console.log(data);
       const session = await authService.loginUser(data);
       if (session) {
         const user = await authService.getUser();
+        console.log(user);
         if (user) dispatch(login(user));
         navigate("/");
       }
+      console.log("clear");
     } catch (error) {
+      console.log(error);
       setError(error.message);
     }
   };
